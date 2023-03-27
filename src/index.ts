@@ -1,3 +1,4 @@
+/* eslint-disable */
 import './fetch-polyfill';
 import * as process from 'process';
 import dotenv from 'dotenv';

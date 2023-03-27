@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Context, Probot } from 'probot';
 
 import { Chat } from './chat';

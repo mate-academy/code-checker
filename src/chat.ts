@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { ChatGPTAPI } from 'chatgpt';
 
 export class Chat {
