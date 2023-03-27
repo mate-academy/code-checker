@@ -25,9 +25,6 @@
   "dependencies": {
     "@actions/core": "^1.10.0"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "devDependencies": {
     "@mate-academy/eslint-config-internal": "^1.1.0",
     "@mate-academy/ts-config": "^1.0.5",
