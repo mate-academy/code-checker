@@ -20,7 +20,12 @@ export class Chat {
       ? `Answer me in ${process.env.LANGUAGE},`
       : '';
 
-    return `Bellow is the code patch, please help me do a brief code review,${answerLanguage} if any bug risk and improvement suggestion are welcome
+    return `
+      Bellow is the code patch (after the word "patch:"), provide a code review, ${answerLanguage}.
+      Focus mostly on things that need to be fixed and not on things that are good.
+      List should be brief and to the point.
+      
+      patch:
     ${patch}
     `;
   };
@@ -36,6 +41,8 @@ export class Chat {
     const res = await this.chatAPI.sendMessage(prompt);
 
     console.timeEnd('code-review cost');
+
+    console.log(res.text);
 
     return res.text;
   };

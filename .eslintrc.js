@@ -1,15 +1,9 @@
-const path = require('path');
-
-const resolve = {
-  extensions: ['.js', '.ts'],
-  alias: {
-    '@': path.resolve(__dirname, '.'),
-  },
-};
-
 module.exports = {
   extends: [
     '@mate-academy/eslint-config-internal',
+  ],
+  plugins: [
+    'file-extension-in-import-ts',
   ],
   env: {
     node: true,
@@ -17,22 +11,12 @@ module.exports = {
   },
   rules: {
     camelcase: 'off',
+    'file-extension-in-import-ts/file-extension-in-import-ts': 'error',
+    'import/no-unresolved': ['error', { ignore: ['\\.js$'] }],
   },
   ignorePatterns: [
     '**/node_modules/*',
     '**/dist/*',
   ],
-  settings: {
-    'import/resolver': {
-      alias: {
-        extensions: resolve.extensions,
-        map: [
-          ...Object.entries(resolve.alias),
-        ],
-      },
-      node: {
-        extensions: resolve.extensions,
-      },
-    },
-  },
+
 };
