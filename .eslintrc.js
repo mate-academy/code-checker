@@ -15,6 +15,9 @@ module.exports = {
     node: true,
     jest: true,
   },
+  rules: {
+    camelcase: 'off',
+  },
   ignorePatterns: [
     '**/node_modules/*',
     '**/dist/*',
