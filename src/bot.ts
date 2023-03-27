@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Context, Probot } from 'probot';
 
-import { Chat } from './chat';
+import { Chat } from './chat.js';
 
 const OPENAI_API_KEY = 'OPENAI_API_KEY';
 const MAX_PATCH_COUNT = 4000;
@@ -44,6 +44,7 @@ export const robot = (app: Probot) => {
   app.on(
     ['pull_request.opened', 'pull_request.synchronize'],
     async (context) => {
+      console.log('event', context.event);
       const repo = context.repo();
       const chat = await loadChat(context);
 
