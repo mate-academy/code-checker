@@ -8,6 +8,8 @@ on: # rebuild any PRs and main branch changes
 
 jobs:
   build: # make sure build/ci work properly
+    env:
+      NODE_OPTIONS: openssl-legacy-provider=true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
