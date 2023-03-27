@@ -1,4 +1,4 @@
-import { Chat } from './chat';
+import { Chat } from './chat.js';
 const OPENAI_API_KEY = 'OPENAI_API_KEY';
 const MAX_PATCH_COUNT = 4000;
 export const robot = (app) => {
@@ -29,6 +29,7 @@ export const robot = (app) => {
         }
     };
     app.on(['pull_request.opened', 'pull_request.synchronize'], async (context) => {
+        console.log('event', context);
         const repo = context.repo();
         const chat = await loadChat(context);
         if (!chat) {
